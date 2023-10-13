@@ -29,6 +29,11 @@ public class MainActivity extends BaseActivity {
         initAdapter();
     }
 
+    @Override
+    public void onBackPressed() {
+        // do nothing
+    }
+
     private void initDataList() {
         cardDataList = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
@@ -43,5 +48,6 @@ public class MainActivity extends BaseActivity {
         kkAdapter = new KKAdapter(cardDataList);
         recyclerView.setAdapter(kkAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        recyclerView.scrollToPosition(Integer.MAX_VALUE / 2);
     }
 }
