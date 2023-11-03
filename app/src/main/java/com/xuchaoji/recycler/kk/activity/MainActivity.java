@@ -1,6 +1,7 @@
 package com.xuchaoji.recycler.kk.activity;
 
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,6 +14,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends BaseActivity {
+    private static final String TAG = "MainActivity";
+    public static final int IMG_COUNT = 23;
     private RecyclerView recyclerView;
 
     private KKAdapter kkAdapter;
@@ -36,7 +39,8 @@ public class MainActivity extends BaseActivity {
 
     private void initDataList() {
         cardDataList = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < IMG_COUNT; i++) {
+            Log.i(TAG, "initDataList, add an_" + i);
             int resId = getResources().getIdentifier("an_" + i, "drawable", getPackageName());
             CardData cardData = new CardData(resId);
             cardDataList.add(cardData);
