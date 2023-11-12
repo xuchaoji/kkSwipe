@@ -1,5 +1,6 @@
 package com.xuchaoji.recycler.kk.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -30,6 +31,8 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         initDataList();
         initAdapter();
+        Intent intent = new Intent(this, TopNewsActivity.class);
+        startActivity(intent);
     }
 
     @Override
